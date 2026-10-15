@@ -13,7 +13,7 @@ De skills waarmee Jelle werkt in Claude Code en Codex, voor vrienden en oud-klan
 | `TESTEN.md` | testvragen na de installatie |
 | `VERSIES.md` | welke versie van elke bron, en wat er veranderde |
 | `vendor/` | ongewijzigde momentopnames van de bronnen, met licentie en `BRON.md` |
-| `eigen/` | skills van Jelle: client-onboarding, kling-ai, wrap-up |
+| `eigen/` | skills van Jelle: client-onboarding, kling-ai, marketing-mainframe, wrap-up |
 | `patches/` | lettertypes voor de pdf-generator (Google Fonts, OFL) |
 | `tools/install.py` | de installer (Claude Code en Codex) |
 | `tools/vendor_sources.py` | haalt nieuwe versies van de bronnen op, voor updates |

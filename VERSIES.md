@@ -1,5 +1,10 @@
 # Versies
 
+## 1.1.0 (15 oktober 2026)
+
+- Nieuw: `marketing-mainframe` (eigen skill van Jelle, familie meta-instagram): wekelijks Meta-adsrapport in Excel. Zonder klantgegevens; `config.json` is een sjabloon.
+- Installer: bij `--vervang` blijven `config.json` en `data/` van marketing-mainframe behouden, zodat je eigen instellingen en geschiedenis niet verdwijnen.
+
 ## 1.0.0 (15 oktober 2026)
 
 Eerste versie. Dezelfde bronversies als Jelles eigen, geteste setup.

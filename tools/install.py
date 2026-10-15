@@ -183,8 +183,10 @@ def install(args):
             if args.proef:
                 log.append(f"  {'vervangt' if dest.exists() else 'installeert'} {sid}")
                 continue
+            old_copy = None
             if dest.exists():
-                log.append(f"  kopie van oude {sid} naar {backup(dest, doel)}")
+                old_copy = backup(dest, doel)
+                log.append(f"  kopie van oude {sid} naar {old_copy}")
             if "git" in s:
                 clone_git_skill(s["git"], dest)
                 log.append(f"  opgehaald uit {s['git']['repo']} ({s['git']['ref']})")
@@ -194,6 +196,15 @@ def install(args):
                 patch_product_demo_video(dest)
             elif s.get("patch", "").startswith("kop-"):
                 ensure_frontmatter(dest, sid, s["uitleg"])
+            for keep in s.get("behoud", []):  # eigen instellingen en geschiedenis van de gebruiker terugzetten
+                if old_copy and (old_copy / keep).exists():
+                    target = dest / keep
+                    if target.is_dir():
+                        shutil.rmtree(target)
+                    elif target.exists():
+                        target.unlink()
+                    (shutil.copytree if (old_copy / keep).is_dir() else shutil.copy2)(old_copy / keep, target)
+                    log.append(f"  behouden: {sid}/{keep}")
             if sid == "wrap-up":
                 fill_notitiemap(dest, args.notitiemap)
             if doel == "codex":

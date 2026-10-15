@@ -1,5 +1,5 @@
 {
-  "versie": "1.0.0",
+  "versie": "1.1.0",
   "datum": "2026-10-15",
   "families": [
     {
@@ -236,12 +236,26 @@
     },
     {
       "id": "meta-instagram",
-      "naam": "Meta-advertenties en Instagram-cijfers (Cooper Simson)",
-      "uitleg": "Een Meta-advertentiemotor die van één opdracht een gepauzeerde campagne met beelden en teksten bouwt, en een analysepijplijn voor Instagram-posts.",
+      "naam": "Meta-advertenties en Instagram",
+      "uitleg": "Een wekelijks Meta-adsrapport in Excel, een Meta-advertentiemotor die van één opdracht een gepauzeerde campagne bouwt, en een analysepijplijn voor Instagram-posts.",
       "installatie": "kopie",
       "per_skill": true,
       "codex": "werkt",
       "skills": [
+        {
+          "id": "marketing-mainframe",
+          "bron": "eigen/marketing-mainframe",
+          "uitleg": "Eigen skill van Jelle: haalt elke week je Meta-advertentiecijfers op en bouwt er een meegroeiend Excel-rapport van, met vergelijking week na week, grafieken en een duiding (wat schalen, wat stoppen).",
+          "behoud": [
+            "config.json",
+            "data"
+          ],
+          "sleutels": [
+            "Meta Ads-koppeling",
+            "Python-pakket openpyxl"
+          ],
+          "instelling": "klantnaam en Meta-advertentieaccount, bij het eerste gebruik"
+        },
         {
           "id": "ad-engine",
           "bron": "vendor/cooper-ai-content-system/skills/ad-engine",

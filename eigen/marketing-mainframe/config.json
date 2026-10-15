@@ -1,0 +1,50 @@
+{
+  "klant": "<JOUW KLANTNAAM>",
+  "valuta": "EUR",
+  "meta_ad_account_id": "<JOUW META AD ACCOUNT ID>",
+  "rapport_dag": "maandag",
+
+  "kpis": ["spend", "impressions", "reach", "frequency", "clicks", "ctr", "cpc", "cpm", "results", "cost_per_result", "roas"],
+
+  "type_mapping": {
+    "OUTCOME_LEADS": "resultaat-campagne",
+    "OUTCOME_SALES": "resultaat-campagne",
+    "OUTCOME_APP_PROMOTION": "resultaat-campagne",
+    "LINK_CLICKS": "boost/promotie",
+    "OUTCOME_TRAFFIC": "boost/promotie",
+    "OUTCOME_ENGAGEMENT": "boost/promotie",
+    "POST_ENGAGEMENT": "boost/promotie",
+    "OUTCOME_AWARENESS": "boost/promotie"
+  },
+  "type_default": "overig",
+
+  "flags": {
+    "cost_per_result_stijging_pct": 20,
+    "frequency_max": 3.0
+  },
+
+  "roas": {
+    "actief": false,
+    "opmerking": "Zet op true zodra er aankoopwaarde via je Meta-pixel binnenkomt."
+  },
+
+  "output": {
+    "lokaal": true,
+    "onedrive_dir": "<OPTIONEEL: pad naar een cloud-gesyncte map, of leeg laten>",
+    "google_drive": {
+      "folder_naam": "Marketing Mainframe - <KLANTNAAM>",
+      "folder_id": null,
+      "vraag_elke_run": true,
+      "auto_push_scheduled": false,
+      "bestandsnaam_met_datum": true,
+      "opmerking": "Drive-push is optioneel en vraagt na een handmatige run. De koppeling kan niet overschrijven, dus elke push maakt een gedateerd bestand in folder_id."
+    }
+  },
+
+  "interpretatie": {
+    "vraag_elke_run": true,
+    "auto_bij_scheduled": true,
+    "kaders": "3x-kill-regel, 20%-schaalregel, frequentie <3,0, CTR >=1% en fatigue bij CTR-daling >20%, 70/20/10 (bron: claude-ads van Daniel Agrici).",
+    "opmerking": "Handmatige run vraagt om een interpretatie; automatische run genereert ze altijd. Duiding komt op de Conclusies-tab."
+  }
+}
