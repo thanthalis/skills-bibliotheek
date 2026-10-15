@@ -1,0 +1,428 @@
+{
+  "versie": "1.0.0",
+  "datum": "2026-10-15",
+  "families": [
+    {
+      "id": "ads",
+      "naam": "Advertenties (claude-ads)",
+      "uitleg": "Audits, strategie, budget, creatives en rapportage voor Google, Meta, LinkedIn, TikTok, YouTube, Microsoft en meer. De hoofdskill 'ads' stuurt door naar 33 deelskills en 25 hulpagents. Wijzigingen in een live advertentieaccount vragen altijd expliciete goedkeuring.",
+      "installatie": "officieel",
+      "bron": "vendor/claude-ads",
+      "per_skill": false,
+      "reden_geen_per_skill": "De hoofdskill 'ads' verdeelt het werk over de deelskills en agents. Losse deelskills zonder de rest werken maar half.",
+      "codex": "volledig (officiële installer met -Target codex)",
+      "sleutels": [
+        "optioneel: API-toegang tot advertentieaccounts, anders werk je met exports"
+      ]
+    },
+    {
+      "id": "seo",
+      "naam": "SEO (claude-seo)",
+      "uitleg": "Volledige site-audits, technische SEO, schema, hreflang, sitemaps, lokale SEO, AI-zoekzichtbaarheid en contentkwaliteit. 42 skills met hulpagents. Installeert een eigen Python-omgeving en een browser voor schermafbeeldingen (~700 MB).",
+      "installatie": "officieel",
+      "bron": "vendor/claude-seo",
+      "per_skill": false,
+      "reden_geen_per_skill": "De hoofdskill 'seo' en de agents werken als geheel.",
+      "codex": "deels: de skills worden gekopieerd, de hulpagents zijn Claude-specifiek",
+      "sleutels": [
+        "optioneel: Google API (Search Console, PageSpeed), DataForSEO"
+      ]
+    },
+    {
+      "id": "blog",
+      "naam": "Blog (claude-blog)",
+      "uitleg": "Blogs schrijven, herschrijven, analyseren en scoren, briefs, contentkalenders, schema, vertalen en lokaliseren, repurposen naar sociale media. 31 skills met hulpagents.",
+      "installatie": "officieel",
+      "bron": "vendor/claude-blog",
+      "per_skill": false,
+      "reden_geen_per_skill": "De hoofdskill 'blog' en de agents werken als geheel.",
+      "codex": "deels: de skills worden gekopieerd, de hulpagents zijn Claude-specifiek",
+      "sleutels": [
+        "optioneel: Google AI (beelden en audio)"
+      ]
+    },
+    {
+      "id": "content",
+      "naam": "Content en short-form video (Cooper Simson)",
+      "uitleg": "Onderwerpen zoeken, scripts en hooks schrijven voor reels en TikTok, een Notion-bibliotheek voor scripts en inspiratie, lead magnets als pdf, carousels en nieuwsbrieven.",
+      "installatie": "kopie",
+      "per_skill": true,
+      "codex": "werkt: paden worden bij installatie aangepast",
+      "skills": [
+        {
+          "id": "content-master",
+          "bron": "vendor/cooper-ai-content-system/skills/content-master",
+          "uitleg": "Eén aanspreekpunt voor al het contentwerk: zegt wat je nodig hebt en roept zelf de juiste skills hieronder aan.",
+          "vereist": [
+            "content-scripting",
+            "hooks",
+            "topic-researcher"
+          ]
+        },
+        {
+          "id": "content-scripting",
+          "bron": "vendor/cooper-ai-content-system/skills/content-scripting",
+          "uitleg": "Volledige workflow voor short-form scripts: echte pijnpunten zoeken, patronen van virale content toepassen, scripts met hookvarianten, gegroepeerd in reeksen."
+        },
+        {
+          "id": "hooks",
+          "bron": "vendor/cooper-ai-content-system/skills/hooks",
+          "uitleg": "Openingszinnen (hooks) en scripts voor video, op basis van 10 bewezen frameworks."
+        },
+        {
+          "id": "topic-researcher",
+          "bron": "vendor/cooper-ai-content-system/skills/topic-researcher",
+          "uitleg": "Zoekt onderwerpen die het uitzonderlijk goed doen in jouw niche en maakt er gescoorde ideekaarten van.",
+          "instelling": "je niche, vul je in bij het eerste gebruik"
+        },
+        {
+          "id": "inspiration-library",
+          "bron": "vendor/cooper-ai-content-system/skills/inspiration-library",
+          "uitleg": "Een levende bibliotheek in Notion met virale hooks, formats en contentonderzoek.",
+          "vereist": [
+            "notion-setup"
+          ],
+          "sleutels": [
+            "Notion-koppeling"
+          ]
+        },
+        {
+          "id": "content-pipeline",
+          "bron": "vendor/cooper-ai-content-system/skills/content-pipeline",
+          "uitleg": "Beheert je productiepijplijn in Notion: status van scripts, wat nog gefilmd moet worden, postingkalender, cijfers.",
+          "vereist": [
+            "notion-setup"
+          ],
+          "sleutels": [
+            "Notion-koppeling"
+          ]
+        },
+        {
+          "id": "notion-setup",
+          "bron": "vendor/cooper-ai-content-system/skills/notion-setup",
+          "uitleg": "Eenmalige setup: maakt de Script Library-database in Notion aan.",
+          "sleutels": [
+            "Notion-koppeling"
+          ]
+        },
+        {
+          "id": "hand-raiser",
+          "bron": "vendor/cooper-ai-content-system/skills/hand-raiser",
+          "uitleg": "Maakt een lead magnet als pdf (gids, cheatsheet, checklist) bij een script of onderwerp, en zet hem in Google Drive.",
+          "vereist": [
+            "gdocs-setup"
+          ],
+          "scripts": true,
+          "sleutels": [
+            "Google Drive-koppeling"
+          ]
+        },
+        {
+          "id": "transcript",
+          "bron": "vendor/cooper-ai-content-system/skills/transcript",
+          "uitleg": "Haalt transcripties uit video's van YouTube, TikTok, Instagram, X en Facebook.",
+          "sleutels": [
+            "SupaData API-sleutel"
+          ]
+        },
+        {
+          "id": "carousel-builder",
+          "bron": "vendor/cooper-ai-content-system/skills/carousel-builder",
+          "uitleg": "Instagram-carousels uit een script, pdf of idee, met echte beelden die er één geheel van maken.",
+          "sleutels": [
+            "kie.ai API-sleutel"
+          ]
+        },
+        {
+          "id": "newsletter",
+          "bron": "vendor/cooper-ai-content-system/skills/newsletter",
+          "uitleg": "Nieuwsbriefmails op basis van je scripts of content, in verschillende formats.",
+          "sleutels": [
+            "optioneel: Beehiiv"
+          ]
+        },
+        {
+          "id": "ig-saved-sync",
+          "bron": "vendor/cooper-ai-content-system/skills/ig-saved-sync",
+          "uitleg": "Zet je opgeslagen Instagram-posts automatisch in je Notion-inspiratiebibliotheek, met een korte AI-analyse per post.",
+          "vereist": [
+            "inspiration-library"
+          ],
+          "sleutels": [
+            "Instagram-login (eigen sessie)",
+            "Notion-koppeling",
+            "Python-pakketten uit requirements.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "naam": "Video maken met Hyperframes (Cooper Simson)",
+      "uitleg": "Video's bouwen in HTML: titelkaarten, ondertitels, voice-over, animaties, verticale reels, promovideo's van een website en productdemo's. Vraagt Node.js en ffmpeg.",
+      "installatie": "kopie",
+      "per_skill": true,
+      "codex": "werkt",
+      "skills": [
+        {
+          "id": "video-edit",
+          "git": {
+            "repo": "https://github.com/thanthalis/video-edit-skill",
+            "ref": "d3b38f1"
+          },
+          "uitleg": "Maakt van ruwe verticale talking-head-clips een afgewerkte reel: beste takes kiezen, stiltes knippen, inzoomen, woorden achter je hoofd, één van drie looks, geluid. Gemaakt door Tenfold, met Jelles aanpassingen voor Nederlands en Windows.",
+          "vereist": [
+            "hyperframes"
+          ],
+          "sleutels": [
+            "eenmalige setup: de skill zet zijn eigen Python-omgeving op (faster-whisper)"
+          ]
+        },
+        {
+          "id": "hyperframes",
+          "bron": "vendor/cooper-ai-content-system/skills/hyperframes",
+          "uitleg": "De basis: videocomposities, animaties, ondertitels, voice-over en overgangen in HTML.",
+          "vereist": [
+            "hyperframes-cli",
+            "gsap"
+          ]
+        },
+        {
+          "id": "hyperframes-cli",
+          "bron": "vendor/cooper-ai-content-system/skills/hyperframes-cli",
+          "uitleg": "De opdrachtregeltool: project starten, controleren, bekijken, renderen, transcriberen, tekst naar spraak."
+        },
+        {
+          "id": "hyperframes-registry",
+          "bron": "vendor/cooper-ai-content-system/skills/hyperframes-registry",
+          "uitleg": "Kant-en-klare blokken en componenten toevoegen aan een video.",
+          "vereist": [
+            "hyperframes"
+          ]
+        },
+        {
+          "id": "gsap",
+          "bron": "vendor/cooper-ai-content-system/skills/gsap",
+          "uitleg": "Naslag voor animaties (GSAP) in Hyperframes."
+        },
+        {
+          "id": "video-editor",
+          "bron": "vendor/cooper-ai-content-system/skills/video-editor",
+          "uitleg": "Volledige pijplijn voor verticale video's (9:16): opnemen, knippen, transcriberen, opmaken, renderen.",
+          "vereist": [
+            "hyperframes"
+          ]
+        },
+        {
+          "id": "website-to-hyperframes",
+          "bron": "vendor/cooper-ai-content-system/skills/website-to-hyperframes",
+          "uitleg": "Maakt van een website een promovideo of productrondleiding.",
+          "vereist": [
+            "hyperframes"
+          ]
+        },
+        {
+          "id": "product-demo-video",
+          "bron": "vendor/cooper-ai-content-system/skills/product-demo-video",
+          "uitleg": "Geanimeerde demovideo's in staand en liggend formaat, met Remotion.",
+          "patch": "product-demo-video-kop"
+        },
+        {
+          "id": "claude-design-hyperframes",
+          "bron": "vendor/cooper-ai-content-system/skills/claude-design-hyperframes",
+          "uitleg": "Enkel voor gebruik binnen Claude Design. In Claude Code of Codex gebruik je 'hyperframes'."
+        }
+      ]
+    },
+    {
+      "id": "meta-instagram",
+      "naam": "Meta-advertenties en Instagram-cijfers (Cooper Simson)",
+      "uitleg": "Een Meta-advertentiemotor die van één opdracht een gepauzeerde campagne met beelden en teksten bouwt, en een analysepijplijn voor Instagram-posts.",
+      "installatie": "kopie",
+      "per_skill": true,
+      "codex": "werkt",
+      "skills": [
+        {
+          "id": "ad-engine",
+          "bron": "vendor/cooper-ai-content-system/skills/ad-engine",
+          "uitleg": "Vier vragen, daarna: concurrentieonderzoek, beelden, advertentieteksten en een gepauzeerde Meta-campagne.",
+          "vereist_familie": [
+            "ads"
+          ],
+          "sleutels": [
+            "kie.ai API-sleutel",
+            "Meta Ads MCP"
+          ]
+        },
+        {
+          "id": "ig-analytics",
+          "bron": "vendor/cooper-ai-content-system/skills/ig-analytics",
+          "uitleg": "Haalt elk uur de Instagram-cijfers op, zet ze in Supabase en Notion, en deelt posts in als uitschieter, gemiddeld of onder de maat.",
+          "sleutels": [
+            "Meta Graph API",
+            "Supabase",
+            "Vercel",
+            "Notion-koppeling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "naam": "Webshops en conversie (Cooper Simson)",
+      "uitleg": "Advies en audits voor webshops: conversie verbeteren, productpagina's, Shopify-design.",
+      "installatie": "kopie",
+      "per_skill": true,
+      "codex": "werkt",
+      "skills": [
+        {
+          "id": "ecommerce-cro",
+          "bron": "vendor/cooper-ai-content-system/skills/ecommerce-cro",
+          "uitleg": "Conversie-expert voor webshops: audits, productteksten, A/B-testen, funnels.",
+          "patch": "kop-ecommerce-cro"
+        },
+        {
+          "id": "shopify-store-design",
+          "bron": "vendor/cooper-ai-content-system/skills/shopify-store-design",
+          "uitleg": "Design van Shopify-winkels en productpagina's: lay-out, wireframes, specificaties.",
+          "patch": "kop-shopify-store-design"
+        }
+      ]
+    },
+    {
+      "id": "overig",
+      "naam": "Algemene hulpmiddelen",
+      "uitleg": "Losse skills voor schrijven, onderzoek, beelden, design en klantwerk.",
+      "installatie": "kopie",
+      "per_skill": true,
+      "codex": "werkt",
+      "skills": [
+        {
+          "id": "humanizer",
+          "bron": "vendor/humanizer",
+          "uitleg": "Haalt AI-taal uit teksten (em-dashes, 'niet X maar Y', opgeblazen claims) zonder de inhoud te veranderen.",
+          "aanbevolen": true
+        },
+        {
+          "id": "last30days",
+          "bron": "vendor/last30days/skills/last30days",
+          "uitleg": "Onderzoekt wat mensen de laatste 30 dagen zeggen over een onderwerp op Reddit, X, YouTube, TikTok en het web.",
+          "sleutels": [
+            "optioneel: OpenAI of xAI voor meer bronnen"
+          ]
+        },
+        {
+          "id": "find-skills",
+          "bron": "vendor/find-skills/skills/find-skills",
+          "uitleg": "Zoekt en installeert nieuwe skills als je vraagt 'is er een skill voor X?'."
+        },
+        {
+          "id": "nano-banana",
+          "bron": "vendor/cooper-ai-content-system/skills/nano-banana",
+          "uitleg": "Beelden maken en bewerken met Nano Banana (Gemini).",
+          "sleutels": [
+            "Gemini CLI en API-sleutel"
+          ]
+        },
+        {
+          "id": "frontend-design",
+          "bron": "vendor/cooper-ai-content-system/skills/frontend-design",
+          "uitleg": "Webpagina's en interfaces bouwen met een verzorgd, eigen design."
+        },
+        {
+          "id": "client-brief",
+          "bron": "vendor/cooper-ai-content-system/skills/client-brief",
+          "uitleg": "Een interactief klantvoorstel van twee pagina's (brief en werkplan) met diagrammen, online gezet via Vercel.",
+          "sleutels": [
+            "Vercel"
+          ]
+        },
+        {
+          "id": "gdocs-setup",
+          "bron": "vendor/cooper-ai-content-system/skills/gdocs-setup",
+          "uitleg": "Eenmalige setup van de koppeling met Google Docs en Drive.",
+          "scripts": true
+        },
+        {
+          "id": "notebooklm",
+          "bron": "vendor/notebooklm",
+          "uitleg": "Google NotebookLM aansturen: notebooks maken, bronnen toevoegen, podcasts en samenvattingen laten genereren.",
+          "sleutels": [
+            "pip install notebooklm-py en inloggen bij Google"
+          ]
+        },
+        {
+          "id": "kling-ai",
+          "bron": "eigen/kling-ai",
+          "uitleg": "Hulp bij AI-video's met Kling: prompts schrijven, modellen kiezen, beeld naar video."
+        },
+        {
+          "id": "wipe-footprint",
+          "bron": "vendor/cooper-ai-content-system/skills/wipe-footprint",
+          "uitleg": "Zoekt waar persoonsgegevens online staan bij databrokers en schrijft de verwijderverzoeken (AVG).",
+          "sleutels": [
+            "optioneel: HIBP API-sleutel"
+          ]
+        },
+        {
+          "id": "client-onboarding",
+          "bron": "eigen/client-onboarding",
+          "uitleg": "Eigen skill van Jelle: doorloopt in één sessie de zeven stappen voor een nieuwe contentklant (intake, marktonderzoek, lead magnet, scripts, mailreeks).",
+          "vereist": [
+            "last30days",
+            "content-scripting",
+            "hand-raiser"
+          ]
+        },
+        {
+          "id": "wrap-up",
+          "bron": "eigen/wrap-up",
+          "uitleg": "Eigen skill van Jelle, geen cursus of publieke repo. Typ 'wrap up' aan het einde van een sessie en je assistent bewaart de besluiten, acties en inzichten als gedateerde notitie in een map die je zelf kiest.",
+          "optioneel": true,
+          "instelling": "NOTITIEMAP"
+        }
+      ]
+    }
+  ],
+  "plugins": {
+    "uitleg": "Plugins installeer je met het plugin-commando van Claude Code, niet met de installer. Vraag per plugin of hij nodig is.",
+    "lijst": [
+      {
+        "id": "marketing",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "uitleg": "Campagneplannen, contentcreatie, merkreview, e-mailreeksen, SEO-audit, prestatierapporten."
+      },
+      {
+        "id": "sales",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "uitleg": "Accountonderzoek, gespreksvoorbereiding, pipeline, outreach, offertes."
+      },
+      {
+        "id": "small-business",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "uitleg": "Kmo-taken: leads, facturen opvolgen, cashflow, reviews, sociale content, maandafsluiting."
+      },
+      {
+        "id": "productivity",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "uitleg": "Takenbeheer en een geheugen voor je werkcontext."
+      },
+      {
+        "id": "legal",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "uitleg": "Contracten en NDA's nakijken, compliance-checks."
+      },
+      {
+        "id": "finance",
+        "marketplace": "anthropics/knowledge-work-plugins",
+        "uitleg": "Boekingen, afstemmingen, financiële overzichten."
+      },
+      {
+        "id": "codex",
+        "marketplace": "openai/codex-plugin-cc",
+        "uitleg": "Codex aanroepen vanuit Claude Code voor een tweede mening of om werk door te geven."
+      }
+    ],
+    "chatcut": "ChatCut Desktop (videobewerking met AI) brengt zijn eigen skills mee zodra je de app installeert en koppelt. Die zitten niet in deze bibliotheek."
+  }
+}

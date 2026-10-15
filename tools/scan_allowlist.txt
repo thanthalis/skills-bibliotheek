@@ -1,0 +1,16 @@
+# Nagekeken op 29 sep 2026: vals alarm in publieke broncode, geen eigen sleutels.
+# Ingebed lettertype (base64) in SVG's:
+vendor/claude-ads/assets/banner.svg
+vendor/claude-ads/assets/diagrams/ads-health-score.svg
+vendor/claude-ads/assets/diagrams/architecture.svg
+vendor/claude-ads/assets/diagrams/how-it-works.svg
+vendor/claude-ads/assets/diagrams/platform-coverage.svg
+# Licentienaam "asterisk-linking-protocol":
+vendor/claude-ads/control-plane/manifests/dependency-inventory.json
+# Voorbeelden met "${VARIABELE}" in documentatie:
+vendor/claude-blog/brain/.raw/sources/claude-blog-skill/docs/MCP-INTEGRATION.md
+vendor/claude-blog/docs/MCP-INTEGRATION.md
+vendor/last30days/skills/last30days/references/save-html-brief.md
+# Publiek token van de Twitter-webclient, hardgecodeerd in open-source-bibliotheek:
+vendor/last30days/skills/last30days/scripts/lib/vendor/bird-search/lib/twitter-client-base.js
+# Dezelfde bestanden, geïnstalleerde kopie in je skills:

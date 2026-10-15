@@ -1,0 +1,23 @@
+{
+  "brand": "Example Brand",
+  "brand_slug": "example-brand",
+  "product_page_url": "https://yoursite.com/products/example",
+  "homepage_url": "https://yoursite.com",
+  "default_ad_account": "act_XXXXXXXXX",
+  "default_objective": "Sales",
+  "default_variants": 20,
+  "default_angles": 5,
+  "default_formats": [
+    "lifestyle",
+    "studio",
+    "testimonial-style",
+    "before-after"
+  ],
+  "extracted_brand_palette": ["#7C3AED", "#F5F3ED", "#171717"],
+  "extracted_type_system": "Inter / GT America",
+  "extracted_brand_voice_notes": "Punchy, contemporary, slightly irreverent",
+  "canonical_photo_path": "",
+  "last_run": "",
+  "run_count": 0,
+  "notes": ""
+}

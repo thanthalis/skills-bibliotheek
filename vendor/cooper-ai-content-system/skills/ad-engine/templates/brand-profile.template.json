@@ -1,0 +1,23 @@
+{
+  "brand": "EXAMPLE_BRAND_NAME",
+  "brand_slug": "example-brand-name",
+  "product_page_url": "https://yoursite.com/products/example",
+  "homepage_url": "https://yoursite.com",
+  "default_ad_account": "act_XXXXXXXXX",
+  "default_objective": "Sales",
+  "default_variants": 20,
+  "default_angles": 5,
+  "default_formats": [
+    "lifestyle",
+    "studio",
+    "testimonial-style",
+    "before-after"
+  ],
+  "extracted_brand_palette": [],
+  "extracted_type_system": "",
+  "extracted_brand_voice_notes": "",
+  "canonical_photo_path": "",
+  "last_run": "",
+  "run_count": 0,
+  "notes": ""
+}
