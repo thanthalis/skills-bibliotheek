@@ -2,7 +2,7 @@
 
 De skills waarmee Jelle werkt in Claude Code en Codex, voor vrienden en oud-klanten. Ruim 130 skills voor advertenties, SEO, blogs, content, video, webshops en algemeen werk, met een begeleide installatie.
 
-**Installeren:** download of clone deze map, open hem in Claude Code of Codex en zeg: *"Lees START-HIER.md en help me installeren."* Je assistent legt per familie en per skill uit wat ze doet en vraagt of je ze wil. Er wordt niets overschreven zonder dat je het bevestigt.
+**Installeren:** download of clone deze map, open hem in Claude Code of Codex en zeg: *"Lees START-HIER.md en help me installeren."* Je assistent begint met de koppeling met Meta Ads en vraagt daarna of je ook skills wil. Per familie en per skill legt hij uit wat ze doet. Er wordt niets overschreven zonder dat je het bevestigt.
 
 ## Wat erin zit
 
@@ -29,4 +29,4 @@ Sleutels en koppelingen (Notion, Google Drive, Meta, API-sleutels) maak je aan m
 
 ## Licenties
 
-claude-ads, claude-seo, claude-blog, humanizer, last30days, notebooklm-py en vercel-labs/skills zijn MIT. Coopers AI Content System is "Free to use, modify, and share". video-edit is een fork van Tenfold (`tenfoldmarc/video-edit-skill`), gedeeld met toestemming, en wordt bij de installatie rechtstreeks uit die fork gehaald. De licentie van elke bron staat in zijn map onder `vendor/`. De lettertypes in `patches/fonts` zijn Google Fonts onder de SIL Open Font License.
+claude-ads, claude-seo, claude-blog, humanizer, last30days, notebooklm-py en vercel-labs/skills zijn MIT. Coopers AI Content System is "Free to use, modify, and share". video-edit zit niet in deze bibliotheek: die is privé en kun je aanvragen op https://mamaenfit.be/video-edit-skill/ De licentie van elke bron staat in zijn map onder `vendor/`. De lettertypes in `patches/fonts` zijn Google Fonts onder de SIL Open Font License.

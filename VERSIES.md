@@ -1,5 +1,11 @@
 # Versies
 
+## 1.2.0 (25 november 2026)
+
+- Installatie start standaard met de Meta Ads-koppeling (MCP), daarna pas de vraag of je skills wil. `marketing-mainframe` is niet langer standaard, maar blijft te kiezen in de familie meta-instagram.
+- `video-edit` uit de installatie gehaald: de skill is privé. Aanvragen kan op https://mamaenfit.be/video-edit-skill/. De assistent meldt dat als laatste stap.
+- Testvragen voor Meta toegevoegd in `TESTEN.md`.
+
 ## 1.1.0 (15 oktober 2026)
 
 - Nieuw: `marketing-mainframe` (eigen skill van Jelle, familie meta-instagram): wekelijks Meta-adsrapport in Excel. Zonder klantgegevens; `config.json` is een sjabloon.
@@ -32,7 +38,7 @@ Niet opgenomen: persoonlijke skills van Jelle (second brain, Zoom-sync, eigen me
 
 ## Een update voorbereiden (voor wie de bibliotheek beheert)
 
-1. In `tools/vendor_sources.py` de `ref` van de bron verhogen (video-edit: in `manifest.json`)
+1. In `tools/vendor_sources.py` de `ref` van de bron verhogen
 2. `py tools/vendor_sources.py <bron>`
 3. De betrokken skills testen
 4. Hier een nieuwe versie noteren, met wat er veranderde
