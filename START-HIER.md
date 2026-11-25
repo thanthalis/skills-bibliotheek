@@ -80,6 +80,36 @@ Voor de codex-plugin: `claude plugin marketplace add openai/codex-plugin-cc` en 
 
 Maak een korte lijst van wat de gekozen skills nodig hebben (de installer toont die aan het einde). Zeg dat dat niet nu hoeft: elke skill vraagt erom bij het eerste gebruik en legt uit hoe. Koppelingen zoals Notion, Google Drive of Meta maak je zelf aan, met je eigen account.
 
+### De Meta Ads-koppeling (MCP)
+
+Koos de gebruiker `marketing-mainframe`, `ad-engine` of de familie ads, leg dan deze koppeling uit. Vraag eerst: **"Wil je de Meta-koppeling nu leggen, of later?"**
+
+**Wat het is, in gewone taal.** Een MCP is een stekker tussen Claude en een andere dienst. De Meta Ads-MCP is de officiële, gratis koppeling van Meta zelf. Daarmee kan Claude je advertentieaccounts, campagnes en cijfers lezen, zonder dat je exports moet maken of een API-sleutel moet aanvragen. Je logt in met je eigen Facebook-account en Meta bepaalt wat Claude mag zien: enkel de advertentieaccounts waar dat account toegang toe heeft.
+
+**Wat het niet doet.** De koppeling kan technisch ook campagnes aanmaken of wijzigen. De skills hier vragen daar altijd eerst expliciet toestemming voor, en `ad-engine` zet nieuwe campagnes standaard op gepauzeerd. Zeg dat erbij.
+
+**Installeren in de Claude desktop-app (aanbevolen).** Claude Code neemt de koppeling daarna automatisch over, daar hoef je niets apart te doen.
+1. Open de Claude **desktop-app**.
+2. Ga naar **Settings → Connectors** (linkermenu, onderaan).
+3. Klik **"Add custom connector"**, geef hem een naam (bv. `Meta Ads`) en plak als URL: `https://mcp.facebook.com/ads`
+4. Klik **Connect**. Er opent een Facebook-venster in je standaardbrowser. Log in met het account dat **toegang heeft tot je advertentieaccount** (eigenaar of beheerder in Business Manager) en keur goed.
+5. Herstart Claude Code.
+
+**Enkel Claude Code, zonder desktop-app.** Laat de gebruiker dit in een terminal draaien:
+```
+claude mcp add --transport http meta-ads https://mcp.facebook.com/ads
+```
+Daarna in Claude Code `/mcp` typen, `meta-ads` kiezen en inloggen via de browser.
+
+**Codex.** Deze koppeling is niet getest in Codex. Zeg dat eerlijk en raad aan ze in Claude te gebruiken.
+
+**Controleren.** Zoek de Meta-tools met een trefwoord (bv. ToolSearch `meta ads accounts`, niet een vaste server-id, want die verschilt per gebruiker) en haal de advertentieaccounts op. Toon de namen en vraag of het juiste account erbij staat.
+
+**Lukt het niet?**
+- *Geen of verkeerde accounts:* waarschijnlijk ingelogd met een ander Facebook-account. Het browservenster gebruikt het profiel dat op dat moment actief is. Log daar uit of wissel van profiel, verwijder de connector en leg hem opnieuw.
+- *Tools niet zichtbaar in Claude Code:* herstart Claude Code volledig, en kijk in de desktop-app of de connector op "Connected" staat.
+- *Account staat er niet tussen:* het Facebook-account heeft geen rechten op dat advertentieaccount. Laat de eigenaar je toevoegen in Business Manager (Instellingen → Advertentieaccounts → Personen toewijzen).
+
 ## Stap 7: afronden
 
 1. `python tools/install.py controleer --doel <doel>` en meld het resultaat.
